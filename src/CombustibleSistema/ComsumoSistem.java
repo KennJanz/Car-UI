@@ -11,6 +11,7 @@ package CombustibleSistema;
 public class ComsumoSistem {
     private double nivel;
     private double consumo; 
+    
 
     public double getNivel() {
         return nivel;
@@ -19,35 +20,31 @@ public class ComsumoSistem {
     public double getConsumo() {
         return consumo;
     }
-
-    public void setNivel(double nivel) {
-        this.nivel = nivel;
-    }
-
-    public ComsumoSistem(double nivel, double consumo) {
-        this.nivel = nivel;
-        this.consumo = consumo;
-    }
     
-      public void consumir(double cantidad) {
-        if (cantidad > 0 && cantidad <= nivel) {
-            nivel -= cantidad;
-        } else {
-            System.out.println("No hay suficiente combustible para consumir esa cantidad.");
-        }
+    public boolean consumir() {
+    int cantidad = 50;
+    if (cantidad > 0 && cantidad <= nivel) {
+        nivel -= cantidad;
+        return true;
     }
+    return false;
+}
 
-    public void repostar(double cantidad) {
-        if (cantidad > 0) {
-            nivel += cantidad;
-        } else {
-            System.out.println("La cantidad a repostar debe ser positiva.");
-        }
+public boolean repostar(double cantidad) {
+    if (cantidad > 0) {
+        nivel += cantidad;
+        return true;
     }
+    return false;
+}
 
-    public double obtenerNivel() {
-        return nivel;
-    }
+public double obtenerNivel() {
+    return nivel;
+}
+
    
-    
+     public ComsumoSistem() {
+        this.nivel = 100.0;
+        this.consumo = 0;
+    }
 }
