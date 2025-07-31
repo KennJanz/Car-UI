@@ -36,6 +36,6 @@ public class SistemaPuerta {
     private boolean esIndiceValido(int i) {
         return i >= 0 && i < puertas.length;
     }
-    
+
 }
 
