@@ -33,4 +33,13 @@ private Puerta[] puertas = new Puerta[4];
     private boolean esIndiceValido(int i) {
         return i >= 0 && i < puertas.length;
     }
+    public boolean hayPuertaAbierta() {
+    for (Puerta puerta : puertas) {
+        if (puerta != null && puerta.isEstado()) {
+            return true;
+        }
+    }
+    return false;
+}
+
 } 
