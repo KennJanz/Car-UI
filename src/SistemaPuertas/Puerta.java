@@ -9,11 +9,16 @@ package SistemaPuertas;
  * @author Yumor
  */
 public class Puerta {
-    private int Idpuerta; 
+    private int idPuerta; 
     private boolean estado; 
 
-    public int getIdpuerta() {
-        return Idpuerta;
+    public Puerta(int idPuerta, boolean estado) {
+        this.idPuerta = idPuerta;
+        this.estado = estado;
+    }
+
+    public int getIdPuerta() {
+        return idPuerta;
     }
 
     public boolean isEstado() {
@@ -24,10 +29,8 @@ public class Puerta {
         this.estado = estado;
     }
 
-    public Puerta(int Idpuerta, boolean estado) {
-        this.Idpuerta = Idpuerta;
-        this.estado = false;
+    @Override
+    public String toString() {
+        return "Puerta{idPuerta=" + idPuerta + ", estado=" + estado + "}";
     }
-    
-    
-}
+} 

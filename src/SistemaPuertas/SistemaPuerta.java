@@ -1,12 +1,18 @@
 
 package SistemaPuertas;
-import SistemaPuertas.Puerta;
-/**
- *
- * @author Yumor
- */
+
 public class SistemaPuerta {
-    private Puerta[] puertas = new Puerta[4];
+private Puerta[] puertas = new Puerta[4];
+
+    public SistemaPuerta() {
+        for (int i = 0; i < puertas.length; i++) {
+            puertas[i] = new Puerta(i, false);
+        }
+    }
+
+    public Puerta[] getPuertas() {
+        return puertas;
+    }
 
     public void abrirPuerta(int i) {
         if (esIndiceValido(i)) {
@@ -24,18 +30,7 @@ public class SistemaPuerta {
         return esIndiceValido(i) && puertas[i].isEstado();
     }
 
-    public boolean[] mostrarEstados() {
-    boolean[] estados = new boolean[puertas.length];
-    for (int i = 0; i < puertas.length; i++) {
-        if (puertas[i] != null) {
-            estados[i] = puertas[i].isEstado();
-        }
-    }
-    return estados;
-}
     private boolean esIndiceValido(int i) {
         return i >= 0 && i < puertas.length;
     }
-
-}
-
+} 
